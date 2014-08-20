@@ -2,7 +2,6 @@ require 'httparty'
 require 'twitter'
 require 'dotenv'
 require 'json'
-Dotenv.load
 
 module Tweets
   def self.search(params = {})
