@@ -46,7 +46,7 @@ module Tweets
         author:     tweet.user.screen_name,
         location:   location(tweet),
         hashtags:   hashtags(tweet),
-      }.to_json
+      }
     end
 
     def location(tweet)
