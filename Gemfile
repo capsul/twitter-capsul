@@ -6,5 +6,4 @@ gem 'twitter', '~> 5.11.0'
 
 group :development, :test do
   gem 'dotenv', '~> 0.11.1'
-  Dotenv.load
 end
