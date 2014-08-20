@@ -1,6 +1,5 @@
 require 'httparty'
 require 'twitter'
-require 'dotenv'
 require 'json'
 
 module Tweets
