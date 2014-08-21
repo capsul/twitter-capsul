@@ -13,17 +13,20 @@ module Tweets
     def search_tweets(params = {})
       client = config_client
 
-      client.search("",
+      tweets = client.search("",
                     geocode: params['lat'] + "," + 
                       params['lng'] + "," + 
-                      ".25mi",
+                      ".20mi",
                     :until => params['time'], # Ac
                     result_type: 'recent',
                     count: 100,
                     include_entities: true 
       ).map do |tweet|
         tweet_to_granual(tweet)
-      end 
+      end
+      filtered_tweets = filterDuplicates(tweets)
+      puts filtered_tweets.count
+      filtered_tweets.sort_by{ |key| key["id"].to_i } 
     end
     
     private
@@ -34,6 +37,10 @@ module Tweets
         config.access_token         = ENV['ACCESS_TOKEN']
         config.access_token_secret  = ENV['ACCESS_SECRET']
       end
+    end
+
+    def filterDuplicates(tweets)
+      tweets.uniq { |tweet| [tweet[:author] ].join(":") }
     end
 
     def tweet_to_granual(tweet)
