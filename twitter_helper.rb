@@ -50,7 +50,6 @@ module Tweets
     end
 
     def tweet_to_granual tweet
-      puts tweet
       return {
         type:       'text',
         id:         tweet.id.to_s,
