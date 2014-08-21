@@ -15,7 +15,7 @@ module Tweets
       tweets = client.search("",
         geocode: params['lat'] + "," + 
                  params['lng'] + "," + 
-                 ".1mi",
+                 ".25mi",
         :until => params['time'],
         result_type: 'recent',
         count: 100,
