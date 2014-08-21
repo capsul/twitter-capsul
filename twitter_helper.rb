@@ -16,7 +16,7 @@ module Tweets
       tweets = client.search("",
         geocode: params['lat'] + "," + 
                  params['lng'] + "," + 
-                 ".25mi",
+                 ".5mi",
         :until => params['time'],
         result_type: 'mixed',
         count: 100,
