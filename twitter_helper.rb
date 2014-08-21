@@ -18,7 +18,7 @@ module Tweets
                  params['lng'] + "," + 
                  ".25mi",
         :until => params['time'],
-        result_type: 'recent',
+        result_type: 'mixed',
         count: 100,
         include_entities: true 
         ).map do |tweet|
