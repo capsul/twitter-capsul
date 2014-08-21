@@ -39,6 +39,7 @@ module Tweets
     def tweet_to_granual(tweet)
       return {
         type:       'text',
+        id:         tweet.id.to_s,
         created_at: tweet.created_at,
         source:     'twitter',
         language:   tweet.lang,
