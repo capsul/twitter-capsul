@@ -38,14 +38,14 @@ module Tweets
 
     def clean_response tweets
       filtered_tweets = filter_duplicates tweets
-      sort_hash_by_type filtered_tweets "id"
+      sort_hash_by_type filtered_tweets, "id"
     end
 
     def filter_duplicates tweets
       tweets.uniq { |tweet| [tweet[:author] ].join(":") }
     end
 
-    def sort_hash_by_type tweets type
+    def sort_hash_by_type tweets, type
       tweets.sort_by { |key| key[type].to_i } 
     end
 
