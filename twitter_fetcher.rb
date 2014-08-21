@@ -3,12 +3,12 @@ require 'json'
 load './twitter_helper.rb'
 
 get '/tweets' do
-  results = Tweets.search(params)
+  tweets = Tweets.search(params)
   
   return {
     latitude:   params[:lat], 
     longitude:  params[:lng],
     time:       params[:time],
-    tweets:     results
+    tweets:     tweets
   }.to_json
 end
