@@ -19,7 +19,7 @@ module Tweets
                  ".5mi",
         :until => params['time'],
         result_type: 'mixed',
-        count: 100,
+        count: 40,
         include_entities: true 
         ).map do |tweet|
           tweet_to_granual tweet
