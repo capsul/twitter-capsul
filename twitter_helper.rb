@@ -11,7 +11,6 @@ module Tweets
   class TwitterFetcher
     def search_tweets params = {}
       client = config_client
-      puts params
 
       tweets = client.search("",
         geocode: params['lat'] + "," + 
