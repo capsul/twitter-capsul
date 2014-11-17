@@ -1,9 +1,10 @@
 require 'sinatra'
 require 'json'
-load './twitter_helper.rb'
+load './twitter_query.rb'
 
 get '/tweets' do
-  tweets = Tweets.search params
+
+  tweets = TwitterQuery.search(params)
   
   return {
     latitude:   params[:lat], 
@@ -11,4 +12,5 @@ get '/tweets' do
     time:       params[:time],
     tweets:     tweets
   }.to_json
+
 end
