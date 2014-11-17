@@ -5,4 +5,6 @@ if development?
   Dotenv.load
 end
 
+$stdout.sync = true
+
 run Sinatra::Application
